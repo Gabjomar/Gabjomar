@@ -27,3 +27,22 @@ lista_de_listas_de_inteiros = [
     [10, 9, 8, 7, 6, 5, 4, 3, 2, 1],
 ]
 
+def verificador_duplicacao(lista_de_listas_de_valores):
+    lista_resultados_de_cada_verificacao = [];
+    for lista in lista_de_listas_de_valores:
+        conjunto_valores_que_tem_duplicado = set();
+        for valor in lista:
+            if (lista.count(valor) != 1):
+                if valor in conjunto_valores_que_tem_duplicado:
+                    lista_resultados_de_cada_verificacao.append(valor);
+                    break; # Utilizando o break para finalizar o for loop antecipadamente. Muito prático e útil.
+                else:
+                    conjunto_valores_que_tem_duplicado.add(valor);
+        if conjunto_valores_que_tem_duplicado == set():
+            lista_resultados_de_cada_verificacao.append(-1);
+
+    return lista_resultados_de_cada_verificacao;
+
+
+valor_duplicado = verificador_duplicacao(lista_de_listas_de_inteiros);
+print(valor_duplicado);
