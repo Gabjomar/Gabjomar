@@ -22,11 +22,11 @@ import sys; # Importando esse módulo só para ver o tamanho de valores na memó
 iterable = ['Eu', 'Tenho', '__iter__'];
 iterator = iter(iterable);
 
-list_comprehension = [n for n in range(1000)];
+list_comprehension = [n for n in range(10)];
 print(list_comprehension); # Nesse caso tem o problema de criar de cara a lista com todos os valores possíveis para a expressão digitada, gerando muitos valores, ocupando espaço na memória,
                            # e deixando o código ineficiente. Para esses momentos, utilizar o generator faz muito sentido.
 
-generator = (n for n in range(1000)); # Generator expression para criar um generator.
+generator = (n for n in range(10)); # Generator expression para criar um generator.
 print(generator);
 print();
 
